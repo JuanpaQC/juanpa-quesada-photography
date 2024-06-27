@@ -1,0 +1,159 @@
+.albums {
+  text-align: center;
+  padding: 20px;
+}
+
+.albums h2{
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: 10px;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr); /* More columns for smaller items */
+  grid-auto-rows: 150px; /* Ensure rows grow dynamically */
+  gap: 15px;
+  grid-auto-flow: dense;
+  list-style: none;
+  padding: 0;
+}
+
+.album-item {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.album-item:hover {
+  transform: scale(1.03);
+}
+
+.album-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.album-title {
+  position: absolute;
+  bottom: 5px; /* Adjusted to fit smaller items */
+  left: 5px;
+  right: 5px;
+  margin: 0;
+  padding: 3px; /* Adjusted padding for smaller items */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 0.9em; /* Adjusted font size for smaller items */
+  text-align: center;
+  border-radius: 5px;
+}
+
+.album-item:nth-child(1) {
+  grid-column: span 8; /* Adjusted to fit smaller items */
+  grid-row: span 2; 
+}
+
+.album-item:nth-child(2) {
+  grid-column: span 4; 
+  grid-row: span 4; 
+}
+
+.album-item:nth-child(3) {
+  grid-column: span 4; 
+  grid-row: span 2; 
+}
+
+.album-item:nth-child(4) {
+  grid-column: span 4; 
+  grid-row: span 2; 
+}
+
+.album-item:nth-child(5) {
+  grid-column: span 8; 
+  grid-row: span 2; 
+}
+
+.album-item:nth-child(6) {
+  grid-column: span 4; 
+  grid-row: span 4; 
+}
+
+.album-item:nth-child(7) {
+  grid-column: span 8; 
+  grid-row: span 4; 
+}
+
+/* Add more rules for additional albums as needed */
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: relative;
+  background: transparent;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-image {
+  max-width: 95vw;
+  max-height: 90vh;
+}
+
+.modal-title {
+  margin-top: 10px;
+  font-size: 1.5em;
+  color: white;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-left {
+  left: 10px;
+}
+
+.nav-right {
+  right: 10px;
+}

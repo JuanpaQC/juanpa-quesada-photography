@@ -1,0 +1,79 @@
+.navbar {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.096), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(2px);
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  padding: 10px 0;
+  transition: background-color 0.3s ease;
+  font-family: Harlow Solid Italic;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 80px; /* Incrementa el espacio entre los elementos */
+  flex: 1;
+  align-items: center;
+}
+
+.navbar ul.left,
+.navbar ul.right {
+  flex: 1;
+}
+
+.navbar ul.left {
+  justify-content: flex-end;
+}
+
+.navbar ul.right {
+  justify-content: flex-start;
+}
+
+.navbar ul li {
+  display: inline;
+  line-height: 1; /* Reduce la altura de línea para que los elementos no sean tan altos */
+}
+
+.navbar ul li a {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 5px 10px; /* Reduce el padding de los enlaces para que sean más delgados */
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic; /* Aplica un estilo de letra cursiva */
+  font-family: 'Cursive', sans-serif; /* Cambia la fuente a una cursiva entendible */
+  position: relative; /* Necesario para el pseudo-elemento */
+}
+
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: rgb(255, 255, 255);
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+  left: 0;
+  background: rgb(255, 255, 255);
+}
+
+.navbar-logo {
+  height: 90px; /* Ajusta el tamaño del logo */
+  margin: 0 40px; /* Añade espacio alrededor del logo */
+}

@@ -1,0 +1,48 @@
+.about {
+  padding: 2rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.918);
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 45px;
+}
+
+.about-photo {
+  position: relative;
+}
+
+.about-photo img {
+  margin-right: 5px;
+  width: 375px;
+  height: 375px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6);
+}
+
+.about-photo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
+}
+
+.about-bio {
+  max-width: 500px;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fff;
+}
