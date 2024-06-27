@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar'; // Corrected the file name to 'navbar'
 import Welcome from './components/Welcome';
 import Portfolio from './components/Portfolio';
 import Albums from './components/Album';
