@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'WildernessTypeface-Regular';
+  src: url('../fonts/WildernessTypeface-Regular.ttf') format('truetype');
+}
+
+
 .welcome {
   position: relative;
   width: 100%;
@@ -10,19 +16,39 @@
 }
 
 .welcome-text {
-  font-size: 3em;
-  position: relative;
+  font-size: 4em;
+  position: absolute;
   color: white;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  font-weight: 450px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.welcome-text.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .name-text {
-  font-size: 30px;
-  padding-top: 110px;
+  font-size: 5em;
+  padding-top: 140px;
   position: absolute;
   color: white;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   font-style: oblique;
+  font-family: 'WildernessTypeface-Regular';
+  font-weight: 200;
+  letter-spacing: 6px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.name-text.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .final-text {

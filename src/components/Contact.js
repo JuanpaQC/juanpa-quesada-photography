@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { InView } from 'react-intersection-observer'; // Importar InView
 import '../styles/Contact.css';
 
 const Contact = () => {
@@ -44,10 +45,16 @@ const Contact = () => {
 
   return (
     <section id="contact" className="contact">
-      <h2 className='contact-text'>Contact</h2>
+      <InView triggerOnce>
+        {({ inView, ref }) => (
+          <h2 ref={ref} className={`contact-text ${inView ? 'visible' : ''}`}>
+            Contact
+          </h2>
+        )}
+      </InView>
       <div className="contact-container">
         <div className="contact-form">
-          <h3>Get in Touch</h3>          
+          <h3>Get in Touch</h3>
           <form onSubmit={handleSubmit}>
             <label>
               Name:

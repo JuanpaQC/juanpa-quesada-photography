@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import { InView } from 'react-intersection-observer'; // Importar InView
 import '../styles/Album.css';
 
 const albumsData = [
@@ -101,13 +102,31 @@ const Albums = () => {
 
   return (
     <section id="albums" className="albums">
-      <h2>Albums</h2>
+      <InView triggerOnce>
+        {({ inView, ref }) => (
+          <h2
+            ref={ref}
+            className={inView ? 'visible' : ''}
+          >
+            Albums
+          </h2>
+        )}
+      </InView>
       <ul className="album-grid">
         {albumsData.map((album, albumIndex) => (
-          <li key={albumIndex} className="album-item" onClick={() => openModal(album, 0)}>
-            <h3 className="album-title">{album.title}</h3>
-            <img src={album.cover} alt={album.title} className="album-cover" />
-          </li>
+          <InView key={albumIndex} triggerOnce>
+            {({ inView, ref }) => (
+              <li
+                ref={ref}
+                className={`album-item ${inView ? 'visible' : ''}`}
+                style={{ transitionDelay: `${albumIndex * 0.1}s` }} // Añadir retraso de transición
+                onClick={() => openModal(album, 0)}
+              >
+                <h3 className="album-title">{album.title}</h3>
+                <img src={album.cover} alt={album.title} className="album-cover" />
+              </li>
+            )}
+          </InView>
         ))}
       </ul>
       {currentAlbum && (

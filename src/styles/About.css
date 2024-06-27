@@ -8,6 +8,14 @@
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.about h2.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .about-container {
@@ -21,6 +29,14 @@
 
 .about-photo {
   position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.about-photo.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .about-photo img {
@@ -45,4 +61,12 @@
   font-size: 1.1rem;
   line-height: 1.6;
   color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.about-bio.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

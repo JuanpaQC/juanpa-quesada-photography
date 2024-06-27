@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar'; // Asegúrate de importar el Navbar
+import { InView } from 'react-intersection-observer'; // Importar InView
 import '../styles/Welcome.css';
 import foto1 from '../img-welcoming/1.jpg';
 import foto2 from '../img-welcoming/1saturada.jpg';
@@ -34,8 +35,26 @@ const Welcome = () => {
           className={`slide ${index === currentImage ? 'active' : ''}`}
         />
       ))}
-      <h1 className="welcome-text">Welcome to My Portfolio</h1>
-      <p className='name-text'>Juanpa Quesada Photography</p>
+      <InView triggerOnce>
+        {({ inView, ref }) => (
+          <h1
+            ref={ref}
+            className={`welcome-text ${inView ? 'visible' : ''}`}
+          >
+            Welcome to My Portfolio
+          </h1>
+        )}
+      </InView>
+      <InView triggerOnce>
+        {({ inView, ref }) => (
+          <p
+            ref={ref}
+            className={`name-text ${inView ? 'visible' : ''}`}
+          >
+            Juanpa Quesada Photography
+          </p>
+        )}
+      </InView>
       <img src={gif1} alt='Scroll down' className='scroll-down'></img>
       <p className='final-text'>Please Scroll down</p>
     </section>

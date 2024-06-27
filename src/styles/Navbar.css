@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap');
+
+
 .navbar {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.096), rgba(255, 255, 255, 0));
   backdrop-filter: blur(2px);
@@ -49,9 +52,10 @@
   text-align: center;
   padding: 5px 10px; /* Reduce el padding de los enlaces para que sean más delgados */
   text-decoration: none;
-  font-weight: bold;
-  font-style: italic; /* Aplica un estilo de letra cursiva */
-  font-family: 'Cursive', sans-serif; /* Cambia la fuente a una cursiva entendible */
+  font-weight: 600;
+  letter-spacing: 3;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   position: relative; /* Necesario para el pseudo-elemento */
 }
 

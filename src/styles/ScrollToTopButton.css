@@ -14,14 +14,14 @@
   }
   
   .scroll-button {
-    background-color: #333;
-    color: #fff;
+    background-color: #ffffff;
+    color: #000000;
     border: none;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 24px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgb(0, 0, 0);
     transition: background-color 0.3s, transform 0.3s;
     display: flex;
     align-items: center;
@@ -29,6 +29,7 @@
   }
   
   .scroll-button:hover {
+    color: #ffffff;
     background-color: #555;
     transform: translateY(-2px);
   }
