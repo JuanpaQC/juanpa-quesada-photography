@@ -42,17 +42,18 @@ const Portfolio = () => {
         }
       });
     });
-
+  
     if (titleRef.current) {
       titleObserver.observe(titleRef.current);
     }
-
+  
     return () => {
       if (titleRef.current) {
         titleObserver.unobserve(titleRef.current);
       }
     };
-  }, []); // No agregues dependencias aquí si titleRef.current no cambia
+  }, []);
+  
 
   const openModal = (index) => {
     setCurrentImageIndex(index);
