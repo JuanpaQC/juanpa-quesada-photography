@@ -27,13 +27,13 @@ const Portfolio = () => {
         }
       });
     };
-
+  
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Trigger on mount to show items already in view
-
+  
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
+  
   useEffect(() => {
     const titleObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -43,16 +43,19 @@ const Portfolio = () => {
       });
     });
   
-    if (titleRef.current) {
-      titleObserver.observe(titleRef.current);
+    const currentTitleRef = titleRef.current; // Copia a una variable local
+  
+    if (currentTitleRef) {
+      titleObserver.observe(currentTitleRef);
     }
   
     return () => {
-      if (titleRef.current) {
-        titleObserver.unobserve(titleRef.current);
+      if (currentTitleRef) {
+        titleObserver.unobserve(currentTitleRef);
       }
     };
   }, []);
+  
   
 
   const openModal = (index) => {
