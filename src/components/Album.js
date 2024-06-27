@@ -117,7 +117,7 @@ const Albums = () => {
             <button onClick={prevImage} className="nav-button nav-left">&#9664;</button>
             <button onClick={nextImage} className="nav-button nav-right">&#9654;</button>
             <div className="modal-image-container">
-              <img src={currentAlbum.photos[currentImageIndex]} alt={`Photo ${currentImageIndex + 1}`} className="modal-image" />
+              <img src={currentAlbum.photos[currentImageIndex]} alt={`Img ${currentImageIndex + 1} of album ${currentAlbum.title}`} className="modal-image" />
               <div className="modal-title">{`Photo ${currentImageIndex + 1}`}</div>
             </div>
             <button onClick={addLike} className="like-button">❤️ {likes[currentAlbum.title] ? likes[currentAlbum.title][currentImageIndex] : 0}</button>
