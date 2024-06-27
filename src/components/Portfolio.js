@@ -52,7 +52,7 @@ const Portfolio = () => {
         titleObserver.unobserve(titleRef.current);
       }
     };
-  }, []);
+  }, []); // No agregues dependencias aquí si titleRef.current no cambia
 
   const openModal = (index) => {
     setCurrentImageIndex(index);
